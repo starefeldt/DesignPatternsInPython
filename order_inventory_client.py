@@ -15,10 +15,10 @@ print("---------------------------------------------------------------------")
 
 ####################### Dependency Injection ###############################
 
-def order_with_di(item_id, client):
-    service = OrderService_With_DI(client)
+def order_with_di(item_id, repository):
+    service = OrderService_With_DI(repository)
     available = service.check_availability(item_id)
-    print("{0} |{1} | {2} | In stock: {3}".format(type(service).__name__, type(client).__name__ , item_id, available))
+    print("{0} |{1} | {2} | In stock: {3}".format(type(service).__name__, type(repository).__name__ , item_id, available))
     # more steps...
 
 order_with_di(
