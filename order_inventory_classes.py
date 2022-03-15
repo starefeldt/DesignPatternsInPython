@@ -19,10 +19,9 @@ class OrderLocalInventoryRepository:
 		return item_id in self.items.keys()
 
 
-
 ####################### Dependency Injection ###############################
 
-class OrderService_With_DI:
+class OrderService_Better:
 
 	def __init__(self, repository):
 		self.repository = repository

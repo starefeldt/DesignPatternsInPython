@@ -15,22 +15,22 @@ print("---------------------------------------------------------------------")
 
 ####################### Dependency Injection ###############################
 
-def order_with_di(item_id, repository):
-    service = OrderService_With_DI(repository)
+def order_better(item_id, repository):
+    service = OrderService_Better(repository)
     available = service.check_availability(item_id)
     print("{0} |{1} | {2} | In stock: {3}".format(type(service).__name__, type(repository).__name__ , item_id, available))
     # more steps...
 
-order_with_di(
+order_better(
     "ItemID_1", 
     OrderLocalInventoryRepository())
 
-order_with_di(
+order_better(
     "ItemID_2", 
     OrderWarehouseInventoryRepository(
         OrderLocalInventoryRepository()))
 
-order_with_di(
+order_better(
     "ItemID_3", 
     OrderWarehouseInventoryRepository(
         OrderLocalInventoryRepository()))
